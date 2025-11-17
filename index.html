@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QUOTE</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Mes citation</h1>
+      <h2>Gestionnaire de citations en ligne</h2>
+      <h3 id="count">0 citation</h3>
+    </header>
+
+    <hr />
+
+    <form id="form">
+      <label>Entrez une citation.</label>
+      <input type="text" id="quoteText" />
+      <label>Entrez le nom de l'autheur de la citation.</label>
+      <input type="text" id="authorText" />
+      <button class="submit">ajouter</button>
+    </form>
+
+    <div id="quote-list">
+      
+    </div>
+  </body>
+  <script defer type="module" src="script.js"></script>
+</html>
