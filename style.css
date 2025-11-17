@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', system-ui, sans-serif;
+  font-family: "Poppins", system-ui, sans-serif;
 }
 
 /* ===== BODY ===== */
@@ -55,7 +55,7 @@ hr {
   max-width: 600px;
   margin: 0 auto 40px auto;
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -111,10 +111,10 @@ hr {
 
 .quote {
   background: linear-gradient(145deg, #1f1f2f, #28283f);
-  padding: 15px 18px;           
+  padding: 15px 18px; /* carte plus compacte */
   border-radius: 18px;
   border-left: 6px solid #ff6f61;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -122,19 +122,19 @@ hr {
 
 .quote:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
 }
 
 /* Texte de la citation */
 .quote .text {
-  font-size: 1.2rem;        
+  font-size: 1.2rem;
   font-style: italic;
   color: #fff;
 }
 
 /* Auteur mis en valeur et remonté */
 .quote .author {
-  margin-top: 6px;          
+  margin-top: 6px;
   text-align: right;
   font-size: 1.05rem;
   font-weight: 700;
@@ -144,15 +144,15 @@ hr {
 /* Bouton supprimer discret mais distinct */
 .delete-btn {
   align-self: flex-end;
-  padding: 5px 10px;        
-  font-size: 0.8rem;        
+  padding: 5px 10px;
+  font-size: 0.8rem;
   background: transparent;
   border: 2px solid #ff6f61;
   color: #ff6f61;
   border-radius: 12px;
   cursor: pointer;
   transition: 0.2s;
-  margin-top: 4px;          
+  margin-top: 4px;
 }
 
 .delete-btn:hover {
@@ -167,7 +167,13 @@ hr {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
-  header h1 { font-size: 2rem; }
-  #form { padding: 22px; }
-  .quote { padding: 12px 14px; }
+  header h1 {
+    font-size: 2rem;
+  }
+  #form {
+    padding: 22px;
+  }
+  .quote {
+    padding: 12px 14px;
+  }
 }
