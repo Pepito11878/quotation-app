@@ -26,6 +26,50 @@ function addQuote(quoteText, authorText) {
   deleteBtn.style.marginTop = "10px";
   deleteBtn.style.padding = "5px 10px";
   deleteBtn.style.cursor = "pointer";
+
+  deleteBtn.addEventListener("click", () => {
+    quoteDiv.remove();
+
+    citations = citations.filter(
+      (c) => c.text !== quoteText || c.author !== authorText
+    );
+
+    localStorage.setItem("citations", JSON.stringify(citations));
+
+    quoteCount = citations.length;
+    titleCount.innerText = `${quoteCount} citation(s)`;
+  });
+
+  quoteDiv.appendChild(quoteP);
+  quoteDiv.appendChild(authorP);
+  quoteDiv.appendChild(deleteBtn);
+
+  quoteList.appendChild(quoteDiv);
+
+  citations.push({ text: quoteText, author: authorText });
+  localStorage.setItem("citations", JSON.stringify(citations));
+
+  quoteCount = citations.length;
+  titleCount.innerText = `${quoteCount} citation(s)`;
 }
 
+window.addEventListener("DOMContentLoaded", () => {
+  const storedQuotes = localStorage.getItem("citations");
+  if (storedQuotes) {
+    citations = JSON.parse(storedQuotes);
+    citations.forEach((c) => addQuote(c.text, c.author));
+  }
+});
 
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const quoteText = textInput.value.trim();
+  const authorTextValue = authorInput.value.trim();
+
+  if (quoteText && authorTextValue) {
+    addQuote(quoteText, authorTextValue);
+    textInput.value = "";
+    authorInput.value = "";
+  }
+});
