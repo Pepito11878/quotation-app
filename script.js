@@ -15,7 +15,7 @@ function addQuote(quoteText, authorText) {
   authorP.classList.add("author");
 
   quoteP.textContent = `“${quoteText}”`;
-  authorP.textContent = authorText;
+  authorP.textContent = `— ${authorText}`;
 
   const quoteDiv = document.createElement("div");
   quoteDiv.classList.add("quote");
